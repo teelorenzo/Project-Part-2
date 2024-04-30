@@ -1,10 +1,15 @@
-class Television:
+from PyQt6.QtWidgets import *
+from Television_Remote import *
+
+class Television(QMainWindow, Ui_MainWindow):
     MIN_VOLUME: int = 0
     MAX_VOLUME: int = 2
     MIN_CHANNEL: int = 0
     MAX_CHANNEL: int = 3
 
     def __init__(self) -> None:
+        super().__init__()
+        self.setupUi(self)
         self.__status: bool = False
         self.__muted: bool = False
         self.__volume: int = self.MIN_VOLUME
